@@ -24,12 +24,12 @@ class MicronautOrderByTest {
     }
 
     @Test
-    void testPagableSimpleOrder() {
+    void testPageableSimpleOrder() {
         accountRepository.listPageable(Pageable.from(0).order(new Sort.Order("username")));
     }
 
     @Test
-    void testPagableJoinedOrder() {
+    void testPageableJoinedOrder() {
         accountRepository.listPageable(Pageable.from(0).order(new Sort.Order("customer.title")));
     }
 

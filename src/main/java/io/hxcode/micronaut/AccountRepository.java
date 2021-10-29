@@ -19,10 +19,7 @@ public interface AccountRepository extends CrudRepository<Account, Long> {
     @Query(value = "SELECT a FROM Account a ORDER BY a.customer.title")
     List<Account> listWithoutPageable();
 
-    @Query(
-            value = "SELECT account_ FROM Account account_ ",
-            countQuery = "SELECT count(account_) FROM Account account_ "
-    )
+    @Query(value = "SELECT account_ FROM Account account_ ", countQuery = "SELECT count(account_) FROM Account account_ ")
     @Join(value = "customer", type = Join.Type.FETCH)
     Page<Account> listPageable(Pageable pageable);
 

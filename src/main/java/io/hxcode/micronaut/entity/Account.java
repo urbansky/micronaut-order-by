@@ -18,7 +18,7 @@ public class Account {
 
     @Nullable
     @ManyToOne
-    private Customer customer; // is null for admin and sadmin
+    private Customer customer;
 
     @Override
     public boolean equals(Object o) {
